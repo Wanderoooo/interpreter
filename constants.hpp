@@ -1,0 +1,4 @@
+#pragma once
+
+#define PROGRAM_EXECUTION_FAILURE 1
+#define PROGRAM_EXECUTION_SUCCESS 0
