@@ -13,6 +13,7 @@ Orck::Orck()
 {
 
 }
+
 Orck& Orck::getInstance()
 {
   static Orck instance;
