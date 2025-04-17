@@ -1,5 +1,7 @@
 #pragma once
 
+#include "ErrorHandler.hpp"
+
 class Orck {
 public:
   static Orck& getInstance();
@@ -13,4 +15,7 @@ private:
   Orck();
   Orck(const Orck&) = delete;
   Orck& operator=(const Orck&) = delete;
+
+  ErrorHandler handler;
+  bool hasError = { false };
 };

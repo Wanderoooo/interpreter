@@ -3,7 +3,7 @@
 
 #include "ErrorHandler.hpp"
 
-void ErrorHandler::errorOccurred(int line, std::string message)
+void ErrorHandler::errorOccurred(int line, std::string message) // TODO: not called anywhere yet
 {
   errorReport(line, "TODO", message);
 }

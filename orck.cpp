@@ -23,8 +23,22 @@ Orck& Orck::getInstance()
 int Orck::executePrompt()
 {
   std::string userInput;
-  std::getline(std::cin, userInput); // when Enter hit, reads line
-  return run(userInput);
+  while (true)
+  {
+    std::getline(std::cin, userInput); // when Enter hit, reads line
+    if (userInput == "Ctrl+E")
+    {
+      std::cout << "Ctrl+E pressed, exiting program...";
+      break;
+    }
+
+    int runLineResult = run(userInput);
+
+    if (runLineResult)
+    {
+      hasError = PROGRAM_EXECUTION_FAILURE;
+    }
+  }
 }
 
 int Orck::execute(std::string scriptPath)
@@ -34,6 +48,7 @@ int Orck::execute(std::string scriptPath)
 
 int Orck::run(const std::string userInput)
 {
+  // TODO: guard for empty string
   std::cout << userInput << std::endl; // TODO: actually run lines
   return PROGRAM_EXECUTION_SUCCESS;
 }
