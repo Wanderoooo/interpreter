@@ -1,8 +1,12 @@
 #pragma once
 
+#include <string>
+#include "Literal.hpp"
+
 namespace TokenInfo {
 
-  enum class TokenType { // credit - book: Crafting an Interpreter
+  // code credit - book: Crafting an Interpreter
+  enum class TokenType { 
     // Single-character tokens
     LEFT_PAREN, RIGHT_PAREN, LEFT_BRACE, RIGHT_BRACE,
     COMMA, DOT, MINUS, PLUS, SEMICOLON, SLASH, STAR,
@@ -21,13 +25,15 @@ namespace TokenInfo {
     PRINT, RETURN, SUPER, THIS, TRUE, VAR, WHILE,
 
     // End of file
-    EOF
+    END_OF_FILE
   };
 
   class Token {
-    
-  private:
+  public:
+    Token(std::string lexeme, int line) : lexeme(lexeme), line(line) {} // TODO: write a Token cpp file to def all functions
+  private: 
     std::string lexeme;
-    Literal literal; // TODO: define Literal
-  }
-}
+    Literal literal; // TODO: define Literal -> convert to actual type
+    int line; // no file should have a huge number of lines
+  };
+};
