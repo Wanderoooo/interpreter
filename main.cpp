@@ -11,7 +11,7 @@ int main(int argc, char* argv[]) {
 
   if (argc > 2)
   {
-    std::cout << "did not call script, try again. (Example: orck ./script)" << std::endl;
+    std::cout << "did not call script, try again. (Example: orck.exe ./script)" << std::endl;
     executionStatus = PROGRAM_EXECUTION_FAILURE;
   }
   else if (argc == 2) // assume user pass in orck ./script

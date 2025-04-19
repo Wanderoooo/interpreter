@@ -5,7 +5,7 @@
 class Orck {
 public:
   static Orck& getInstance();
-  int run(const std::string userInput);
+  int run(std::vector<char>& strVec);
   int executePrompt();
   std::vector<char> readFileBytes(const std::string& filePath);
   int searchAndReadScript(const std::string& scriptPath);

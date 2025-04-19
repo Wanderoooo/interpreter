@@ -1,12 +1,13 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
 class Literal {
 private:
+  std::vector<char> v;
   union {
-    char s[sizeof(std::string)];
     int i;
     bool b;
-  };
+  } data = { 0 };
 };
